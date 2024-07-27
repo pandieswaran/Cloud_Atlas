@@ -1,14 +1,8 @@
 const mongoose = require('mongoose');
-const Schmea = mongoose.Schema;
+const Schema = mongoose.Schema;
 const validator = require('validator');
 
-// ```
-//  "name":"abc",
-//   "email": "abc@gmail.",
-//   "password":"123"
-// ```
-
-const UserModel = new Schmea(
+const UserModel = new Schema(
     {
         name: {
             type: String,
@@ -26,16 +20,8 @@ const UserModel = new Schmea(
         password: {
             type: String,
             required: true
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now()
-        },
-        updatedAt: {
-            type: Date,
-            default: Date.now()
         }
     }
-)
+);
 
-module.exports = mongoose.model('users', UserModel);
+module.exports = mongoose.model('User', UserModel);

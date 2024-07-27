@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Schmea = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const ProductModel = new Schmea(
+const ProductModel = new Schema(
     {
         productName: {
             type: String,
@@ -14,20 +14,11 @@ const ProductModel = new Schmea(
         price: {
             type: Number,
             required: true
-        },
-        availableStock: {
-            type: Number,
-            required: true
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now()
-        },
-        updatedAt: {
-            type: Date,
-            default: Date.now()
         }
+    },
+    {
+        timestamps: true
     }
-)
+);
 
-module.exports = mongoose.model('products', ProductModel);
+module.exports = mongoose.model('Product', ProductModel);

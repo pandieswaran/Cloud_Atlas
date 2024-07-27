@@ -7,10 +7,10 @@ const { createProduct,
 
 const router = require('express').Router();
 
-router.post('/', ensureAuthenticated, createProduct); //secure
-router.get('/', getProducts);
-router.get('/:id', getProductById);
-router.put('/:id', ensureAuthenticated, updateProductById);//secure
-router.delete('/:id', ensureAuthenticated, deleteById);//secure
+router.post('/add', ensureAuthenticated, createProduct); //secure
+router.get('/get', getProducts);
+router.get('/get/:id', getProductById);
+router.put('/update/:id', ensureAuthenticated, updateProductById);//secure
+router.delete('/delete/:id', ensureAuthenticated, deleteById);//secure
 
 module.exports = router
