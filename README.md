@@ -91,7 +91,7 @@ Expected message: "Login Successfully" and retrieve the token for authorization.
 
 Get All Users:
 
-Select the GET method and enter the URL: http://localhost:8080/users
+Select the GET method and enter the URL: http://localhost:8080/users/all
 Click the Send button.
 
 Expected response: All user details.
