@@ -1,5 +1,6 @@
 const Product = require('../models/Product');
 
+//Create a Product
 const createProduct = async (req, res) => {
     const body = req.body;
     console.log('userInfo', req.userInfo);
@@ -12,6 +13,7 @@ const createProduct = async (req, res) => {
     }
 };
 
+//Get all the Product
 const getProducts = async (req, res) => {
     try {
         const results = await Product.find({});
@@ -21,6 +23,7 @@ const getProducts = async (req, res) => {
     }
 };
 
+//Get a Product Using ID
 const getProductById = async (req, res) => {
     try {
         const id = req.params.id;
@@ -34,6 +37,7 @@ const getProductById = async (req, res) => {
     }
 };
 
+//Update a Product Using ID
 const updateProductById = async (req, res) => {
     try {
         const id = req.params.id;
@@ -48,6 +52,7 @@ const updateProductById = async (req, res) => {
     }
 };
 
+//Delete a Product Using ID
 const deleteById = async (req, res) => {
     try {
         const id = req.params.id;

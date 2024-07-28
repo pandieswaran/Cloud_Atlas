@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+//To Create the user
 const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -30,7 +31,7 @@ const registerUser = async (req, res) => {
     }
 };
 
-
+//Login the user
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -59,6 +60,17 @@ const loginUser = async (req, res) => {
     }
 };
 
+//Get all the User
+const getUser = async (req, res) => {
+    try {
+        const results = await User.find({});
+        res.status(200).json({ data: results });
+    } catch (err) {
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+//Get the User by ID
 const getUserById = async (req, res) => {
     try {
         const id = req.params.id;
@@ -72,6 +84,7 @@ const getUserById = async (req, res) => {
     }
 };
 
+//Update the User by ID
 const updateUserById = async (req, res) => {
     console.log(req.params,"555555")
     console.log(req.params.id,"44444")
@@ -97,6 +110,7 @@ const updateUserById = async (req, res) => {
     }
   };
   
+//Delete the User by ID  
 const deleteById = async (req, res) => {
     try {
         const id = req.params.id;
@@ -115,5 +129,6 @@ module.exports = {
     loginUser,
     deleteById,
     updateUserById,
-    getUserById
+    getUserById,
+    getUser
 };

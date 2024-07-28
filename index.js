@@ -11,17 +11,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('products api running new deploy');
-});
-app.get('/ping', (req, res) => {
-    res.send('<=PONG=>');
-});
-app.get('/country', (req, res) => {
-    res.send('<=INDIA=>');
-});
-
-app.get('/ping', (req, res) => {
-    res.send('PONG')
+    res.send('Levon Assignments');
 });
 
 app.use('/products', productRoutes);

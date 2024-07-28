@@ -1,13 +1,13 @@
 const Axios = require('axios');
 const Cache = require('../models/Cache')
 
-
+//Create Cache File and Get the Data using JSON File
 const createCache = async (req, res) => {
     try {
         const response = await Axios.get('https://jsonplaceholder.typicode.com/posts/1');
         const data = response.data;
 
-        const cacheKey = 'externalData'; // You can use a more dynamic key based on the data
+        const cacheKey = 'externalData'; 
 
         let cache = await Cache.findOne({ key: cacheKey });
 

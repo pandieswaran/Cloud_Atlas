@@ -8,7 +8,6 @@ const ensureAuthenticated = async (req, res, next) => {
             .json({ message: "Unauthoruized" });
     }
     try {
-        //check valid jwt token
         const decoded = jwt.verify(authHeader, process.env.JWT_SECRET);
         req.userInfo = decoded;
         console.log(decoded);
