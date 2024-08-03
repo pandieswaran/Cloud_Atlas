@@ -1,0 +1,11 @@
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+    "name":"pandieswaran",
+    "email":"peswaran@gmial.com",
+    "password":"nazriya@31" 
+}
+
+###
+GET http://localhost:8080/users/all

@@ -9,18 +9,15 @@ const userRoutes = require('./routes/userRoutes');
 const cachee = require('./routes/CacheRoutes')
 app.use(express.json());
 app.use(bodyParser.json());
+const path = require('path');
 
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+
 
 app.get('/', (req, res) => {
     res.send('Levon Assignments');
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
