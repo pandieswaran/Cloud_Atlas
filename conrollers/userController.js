@@ -64,6 +64,7 @@ const loginUser = async (req, res) => {
 const getUser = async (req, res) => {
     try {
         const results = await User.find({});
+        res.send("Datas Getting")
         res.status(200).json({ data: results });
     } catch (err) {
         res.status(500).json({ message: "Internal server error" });
