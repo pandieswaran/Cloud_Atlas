@@ -10,6 +10,14 @@ const cachee = require('./routes/CacheRoutes')
 app.use(express.json());
 app.use(bodyParser.json());
 
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 app.get('/', (req, res) => {
     res.send('Levon Assignments');
 });
